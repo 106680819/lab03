@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="CWA Help Desk appointment booking form">
+    <meta name="keywords" content="CWA, help desk, appointment, HTML form">
+    <meta name="author" content="Asad Omar">
+    <title>CWA Help Desk Appointment</title>
+</head>
+
+<body>
+    <!-- University logo linking to the university website -->
+    <a href="http://www.swin.edu.au">
+        <img src="logo.png"
+            
+             width="300">
+    </a>
+
+    <h1>CWA Help Desk Appointment</h1>
+
+    <p>
+        The Help Desk is located in ATC620.
+        Open 10:30 to 19:00 Monday to Friday
+    </p>
+
+    <p>Check Blackboard for when CWA tutors will be there.</p>
+
+    <form method="post"
+          action="http://mercury.swin.edu.au/it000000/formtest.php">
+
+        <!-- Student identification and names -->
+        <fieldset>
+            <legend>Student details</legend>
+
+            <p>
+                <label for="student-id">Student ID</label>
+                <input type="text"
+                       id="student-id"
+                       name="student_id"
+                       size="10"
+                       pattern="[0-9]{7,10}"
+                       title="Enter between 7 and 10 digits"
+                       required="required">
+            </p>
+
+            <p>
+                <label for="given-name">Given Name</label>
+                <input type="text"
+                       id="given-name"
+                       name="given_name"
+                       size="15"
+                       maxlength="15"
+                       pattern="[A-Za-z]+"
+                       title="Enter letters only, up to 15 characters"
+                       required="required">
+
+                <label for="family-name">Family Name</label>
+                <input type="text"
+                       id="family-name"
+                       name="family_name"
+                       size="15"
+                       maxlength="15"
+                       pattern="[A-Za-z]+"
+                       title="Enter letters only, up to 15 characters"
+                       required="required">
+            </p>
+        </fieldset>
+
+        <!-- Unit selection and tutor -->
+        <fieldset>
+            <legend>Your unit</legend>
+
+            <p>
+                <input type="radio"
+                       id="cos10011"
+                       name="unit"
+                       value="COS10011"
+                       required="required">
+                <label for="cos10011">COS10011</label>
+
+                <input type="radio"
+                       id="cos60004"
+                       name="unit"
+                       value="COS60004">
+                <label for="cos60004">COS60004</label>
+
+                <input type="radio"
+                       id="cos60007"
+                       name="unit"
+                       value="COS60007">
+                <label for="cos60007">COS60007</label>
+            </p>
+
+            <p>
+                <label for="tutor">Your Tutor</label>
+                <select id="tutor" name="tutor" required="required">
+                    <option value="">Please Select</option>
+                    <option value="amina">Amina</option>
+                    <option value="ahmed">Ahmed</option>
+                    <option value="sarah">Sarah</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <!-- Issue categories and description -->
+        <fieldset>
+            <legend>Issue</legend>
+
+            <p>
+                <label for="issue-html">HTML</label>
+                <input type="checkbox"
+                       id="issue-html"
+                       name="issue[]"
+                       value="HTML"
+                       checked="checked">
+
+                <label for="issue-css">CSS</label>
+                <input type="checkbox"
+                       id="issue-css"
+                       name="issue[]"
+                       value="CSS">
+
+                <label for="issue-javascript">JavaScript</label>
+                <input type="checkbox"
+                       id="issue-javascript"
+                       name="issue[]"
+                       value="JavaScript">
+
+                <label for="issue-php">PHP</label>
+                <input type="checkbox"
+                       id="issue-php"
+                       name="issue[]"
+                       value="PHP">
+
+                <label for="issue-mysql">MySQL</label>
+                <input type="checkbox"
+                       id="issue-mysql"
+                       name="issue[]"
+                       value="MySQL">
+            </p>
+
+            <p>
+                <label for="description">Description of Issue</label>
+                <br>
+                <textarea id="description"
+                          name="description"
+                          rows="4"
+                          cols="30"
+                          placeholder="Write description of your problem here..."></textarea>
+            </p>
+        </fieldset>
+
+        <!-- Text inputs practise the formats requested in the lab -->
+        <fieldset>
+            <legend>Preferred Date / Time</legend>
+
+            <p>
+                <label for="preferred-date">Date</label>
+                <input type="text"
+                       id="preferred-date"
+                       name="preferred_date"
+                       placeholder="dd/mm/yyyy"
+                       pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"
+                       title="Enter the date as dd/mm/yyyy"
+                       size="15">
+                <br>
+
+                <label for="preferred-time">Time</label>
+                <input type="text"
+                       id="preferred-time"
+                       name="preferred_time"
+                       placeholder="00:00"
+                       pattern="([01][0-9]|2[0-3]):[0-5][0-9]"
+                       title="Enter a 24-hour time as HH:MM, such as 14:30"
+                       size="15">
+            </p>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Book">
+            <input type="reset" value="Reset form">
+        </p>
+    </form>
+</body>
+</html>
